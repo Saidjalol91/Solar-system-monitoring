@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.learning.Dao.UserRegDao">
+    <resultMap id="UserRegistartion" type="com.example.learning.models.UserRegModel">
+        <result property="firstName"                column="firstName" />
+        <result property="lastName"                 column="lastName" />
+        <result property="email"                    column="email" />
+        <result property="contact"                  column ="contact"/>
+        <result property="address"                  column="address" />
+        <result property="roadAddress"              column="roadAddress" />
+        <result property="role"                     column="role"/>
+        <result property="project"                  column="project"/>
+        <result property="reg_date"                 column="reg_date"/>
+        <result property="reg_update"                   column="reg_update"/>
+    </resultMap>
+
+    <insert id="insertUserReg" parameterType="com.example.learning.models.UserRegModel">
+        insert into renewEnrgy.user(firstName, lastName, email,contact, address,roadAddress,role, project, reg_date,reg_update)
+        values(
+        #{firstName},
+        #{lastName},
+        #{email},
+        #{contact},
+        #{address},
+        #{roadAddress},
+        #{role},
+        #{project},
+        now(),
+        now()
+        )
+    </insert>
+    <select id="getUsersList" parameterType="com.example.learning.models.UserRegModel" resultMap="UserRegistartion">
+        select userID as id,
+           firstName,lastName,email,contact, address, roadAddress
+        from renewEnrgy.user where 1 =1 order by userID ASC
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learning.commons.security.dao.SecurityDao">
+
+    <resultMap id="UserResultMap" type="com.example.learning.commons.security.model.Users">
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="getUserByUsername" parameterType="com.example.learning.commons.security.model.Users" resultMap="UserResultMap">
+            select a.username, a.password from renewEnrgy.UserSignUp a where a.username = #{username};
+    </select>
+    <update id="addLoginFailCount" parameterType="com.example.learning.commons.security.model.Users">
+        update tb_user set loginfail_cnt = loginfail_cnt + 1
+        where user_mst_id = #{user_mst_id}
+    </update>
+
+    <resultMap id="SignUpRequest" type="com.example.learning.commons.security.model.SignupRequest">
+        <result property="username"   column="username"/>
+        <result property="email"   column="email"/>
+        <result property="password" column="password"/>
+        <result property="confirm_passwd" column="confirm_passwd"/>
+        <result property="reg_date" column="reg_date"/>
+        <result property="pass_update" column="pass_update"/>
+    </resultMap>
+    <insert id="registerUser" parameterType="com.example.learning.commons.security.model.SignupRequest">
+        insert into renewEnrgy.UserSignUp(username,email, password, confirm_passwd,reg_date,pass_update)
+        values(
+        #{username},
+        #{email},
+        #{password},
+        #{confirm_passwd},
+        now(),
+        now()
+        )
+    </insert>
+</mapper>

@@ -1,0 +1,145 @@
+/* Popup style */
+
+body,
+table,
+tr,
+em,
+th,
+td,
+ol ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  letter-spacing: -0.025em;
+}
+
+th {
+  font-weight: 500;
+  padding: 8px 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #eaeaea;
+  vertical-align: middle;
+}
+
+td {
+  padding: 8px 10px;
+  border: 1px solid #eaeaea;
+  vertical-align: middle;
+}
+
+i {
+  width: 100px;
+  height: 70px;
+  display: block;
+  margin: 0 auto 10px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../public/assets/change.png");
+}
+
+em {
+  display: block;
+  font-size: 1.4em;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.change-info {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: small;
+  font-weight: 200;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+span {
+  position: relative;
+  line-height: 1;
+}
+
+.popupbox {
+  position: absolute;
+  background: #00000050;
+  width: 50%;
+  height: 100vh;
+  top: 100px;
+  left: 200px;
+  z-index: 10;
+}
+
+.input_style {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  padding: 8px 15px;
+  height: 45px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.popupmodal {
+  background-color: red;
+  border: green;
+  border-radius: 15%;
+  width: 300px;
+  height: 900px;
+}
+
+.context {
+  background-color: red;
+  border: green 1px solid;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #004796;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: #fff;
+  font-size: 16px;
+}

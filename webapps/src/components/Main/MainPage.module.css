@@ -1,0 +1,15 @@
+label {
+    width: 25%;
+    color: black;
+    font-Weight: bold;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.cap { 
+   position: relative;
+   border: 1px solid #ddd;
+   background-color: #fff;;
+   margin-bottom: 10px;
+   display: grid;
+   grid-template-columns: 22.5% 22.5% 22.5% 22.5% 10%;
+}

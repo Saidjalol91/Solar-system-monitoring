@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.learning.Dao.SolarSunRCVDao">
+    <resultMap id="ProgramSunDataRCV" type="com.example.learning.models.SunDataRCVModel">
+        <id     property="ID"                      column="ID"/>
+        <result property="currentDate"             column="currentDate" />
+        <result property="currentTime"             column="currentTime" />
+        <result property="rtuEnergySource"             column="rtuEnergySource" />
+        <result property="iMEI"                        column="iMEI" />
+        <result property="energyType"                  column="energyType" />
+        <result property="inverter_Id"                 column="inverter_Id" />
+        <result property="com_status"                  column="com_status" />
+        <result property="one_vlt_PV"                  column="one_vlt_PV" />
+        <result property="one_cur_PV"             column="one_cur_PV" />
+        <result property="one_PV_Out"             column="one_PV_Out" />
+        <result property="one_sys_V"             column="one_sys_V" />
+        <result property="one_sys_Cur"             column="one_sys_Cur" />
+        <result property="one_Cur_Out"             column="one_Cur_Out" />
+        <result property="one_Pw_Fc"             column="one_Pw_Fc" />
+        <result property="one_Frq"             column="one_Frq" />
+        <result property="ttl_Gnr_Pwr"             column="ttl_Gnr_Pwr" />
+        <result property="fail_Sts"             column="fail_Sts" />
+        <result property="three_vlt_PV"             column="three_vlt_PV" />
+        <result property="three_cur_PV"             column="three_cur_PV" />
+        <result property="three_out_PV"             column="three_out_PV" />
+        <result property="three_R_V"             column="three_R_V" />
+        <result property="three_S_V"             column="three_S_V" />
+        <result property="three_T_V"             column="three_T_V" />
+        <result property="three_R_C"             column="three_R_C" />
+        <result property="three_T_C"             column="three_T_C" />
+        <result property="three_S_C"             column="three_S_C" />
+        <result property="three_Cur_Out"             column="three_Cur_Out" />
+        <result property="three_Pw_Fc"             column="three_Pw_Fc" />
+        <result property="three_Frq"             column="three_Frq" />
+    </resultMap>
+
+    <insert id="insertSolarSunRCV" parameterType="com.example.learning.models.SunDataRCVModel">
+        insert into renewEnrgy.RCVData(rtuEnergySource,iMEI, energyType, inverter_Id, com_status,one_vlt_PV,one_cur_PV,
+        one_PV_Out,one_sys_V,one_sys_Cur,one_Cur_Out,one_Pw_Fc,one_Frq,ttl_Gnr_Pwr,fail_Sts,three_vlt_PV,three_cur_PV,three_out_PV,
+        three_R_V,three_S_V,three_T_V,three_R_C,three_T_C,three_S_C,three_Cur_Out,three_Pw_Fc,three_Frq,currentDate,currentTime)
+               values(
+                    #{rtuEnergySource},
+                    #{iMEI},
+                    #{energyType},
+                    #{inverter_Id},
+                    #{com_status},
+                    #{one_vlt_PV},
+                    #{one_cur_PV},
+                    #{one_PV_Out},
+                    #{one_sys_V},
+                    #{one_sys_Cur},
+                    #{one_Cur_Out},
+                    #{one_Pw_Fc},
+                    #{one_Frq},
+                    #{ttl_Gnr_Pwr},
+                    #{fail_Sts},
+                    #{three_vlt_PV},
+                    #{three_cur_PV},
+                    #{three_out_PV},
+                    #{three_R_V},
+                    #{three_S_V},
+                    #{three_T_V},
+                    #{three_R_C},
+                    #{three_T_C},
+                    #{three_S_C},
+                    #{three_Cur_Out},
+                    #{three_Pw_Fc},
+                    #{three_Frq},
+                    #{currentDate},
+                    #{currentTime}
+                 )
+    </insert>
+
+    <select id="getSunDataRCVList" parameterType="com.example.learning.models.SunDataRCVModel" resultMap="ProgramSunDataRCV">
+        select ID, rtuEnergySource,iMEI, energyType, inverter_Id, com_status,one_vlt_PV,one_cur_PV,
+        one_PV_Out,one_sys_V,one_sys_Cur,one_Cur_Out,one_Pw_Fc,one_Frq,ttl_Gnr_Pwr,fail_Sts,three_vlt_PV,three_cur_PV,three_out_PV,
+        three_R_V,three_S_V,three_T_V,three_R_C,three_T_C,three_S_C,three_Cur_Out,three_Pw_Fc,three_Frq,currentDate,currentTime from renewEnrgy.RCVData
+        where 1= 1  order by ID ASC
+    </select>
+
+
+</mapper>
